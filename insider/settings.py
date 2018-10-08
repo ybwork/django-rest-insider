@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 BASE_URL = 'http://127.0.0.1:8000'
 
+MEDIA_URL = '/media/'
 
 # Application definition
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
     'houses',
+    'flats',
 ]
 
 SITE_ID = 1

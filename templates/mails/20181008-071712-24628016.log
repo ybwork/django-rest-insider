@@ -1,0 +1,18 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [example.com] Please Confirm Your E-mail Address
+From: webmaster@localhost
+To: user1@gmail.com
+Date: Mon, 08 Oct 2018 04:17:12 -0000
+Message-ID: <153897223258.6600.12193207510179387600@DESKTOP-58KVJS4>
+
+Hello from example.com!
+
+You're receiving this e-mail because user user1 has given yours as an e-mail address to connect their account.
+
+To confirm this is correct, go to http://127.0.0.1:8000/rest-auth/registration/account-confirm-email/MQ:1g9Mym:1O3zcj0jxIrqNkZXpo2NnXt_qdE/
+
+Thank you from example.com!
+example.com
+-------------------------------------------------------------------------------

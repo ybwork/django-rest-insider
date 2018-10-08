@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'insider.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rest_insider',
+        'NAME': 'insider',
         'USER': 'postgres',
         'PASSWORD': 'asdf',
         'HOST': '127.0.0.1',

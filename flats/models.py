@@ -12,7 +12,7 @@ class Flat(models.Model):
     entrance = PositiveIntegerField(db_index=True)
     floor = PositiveIntegerField(db_index=True)
     status = IntegerField(db_index=True)
-    clone_for_flats = CharField(max_length=255, blank=True, null=True, default='')
+    # clone_for_flats = CharField(max_length=255, blank=True, null=True, default='')
     type = CharField(max_length=255)
 
     class Meta:

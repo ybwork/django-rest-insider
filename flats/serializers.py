@@ -13,7 +13,6 @@ class FlatSerializer(serializers.ModelSerializer):
             'entrance',
             'floor',
             'status',
-            'clone_for_flats',
             'type'
         )
         many = True

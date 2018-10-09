@@ -21,3 +21,13 @@ class FlatViewSet(viewsets.ModelViewSet):
             return serializer.save(house=house)
         else:
             raise Http404
+
+    def perform_update(self, serializer):
+        flat = flat_model.objects.get(pk=self.kwargs['pk'])
+        flat.schema.delete()
+        return serializer.save()
+
+    def perform_delete(self, serializer):
+        flat = flat_model.objects.get(pk=self.kwargs['pk'])
+        flat.schema.delete()
+        return serializer

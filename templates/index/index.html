@@ -6,14 +6,14 @@
 </head>
 <body>
     <form id="imageForm">
-        <input id="image" type="file" name="schema">
+        <input id="schema" type="file" name="schema">
         <input type="text" name="price">
         <input type="text" name="number">
         <input type="text" name="entrance">
         <input type="text" name="floor">
         <input type="text" name="status">
-        <input type="text" name="clone_for_flats">
         <input type="text" name="type">
+        <input type="text" name="house">
         <button class="post-image" type="button">add image</button>
     </form>
 
@@ -21,52 +21,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <script>
-        $('.post-image').on('click', function() {
-            var data = new FormData(document.getElementById('imageForm'))
-
-            data.append('image', document.getElementById('image'));
-
-            axios({
-                method: 'POST',
-
-                headers: {
-                    'Content-type': 'multipart/form-data'
-                },
-
-                data: data,
-
-                url: 'http://127.0.0.1:8000/flats/',
-
-            }).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error)
-            })
-        });
-
-        $('.put-image').on('click', function() {
-            var data = new FormData(document.getElementById('imageFormChange'))
-
-            data.append('image', document.getElementById('image'));
-
-            axios({
-                method: 'PUT',
-
-                headers: {
-                    'Content-type': 'multipart/form-data'
-                },
-
-                data: data,
-
-                url: 'http://172.100.2.15:8000/flats-schemas/8c008648',
-
-            }).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error)
-            })
-        });
-    </script>
 </body>
 </html>
+<script>
+        $('.post-image').on('click', function() {
+            var formData = new FormData(document.getElementById('imageForm'))
+
+            var imagefile = document.querySelector('#schema');
+
+            formData.append("schema", imagefile.files[0]);
+
+            axios.post('http://127.0.0.1:8000/flats/', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': 'Token 0d586482f0400602ee9b36cc5c11cd9b19843a08',
+                }
+            })
+
+            <!--axios.put('http://127.0.0.1:8000/flats/7/', formData, {-->
+                <!--headers: {-->
+                    <!--'Content-Type': 'multipart/form-data',-->
+                    <!--'Authorization': 'Token 0d586482f0400602ee9b36cc5c11cd9b19843a08',-->
+                <!--}-->
+            <!--})-->
+        });
+    </script>

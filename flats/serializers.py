@@ -7,6 +7,7 @@ class FlatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Flat
         fields = (
+            'schema',
             'house',
             'price',
             'number',

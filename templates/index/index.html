@@ -31,17 +31,17 @@
 
             formData.append("schema", imagefile.files[0]);
 
-            axios.post('http://127.0.0.1:8000/flats/', formData, {
+            axios.post('http://127.0.0.1:8000/prices/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                    'Authorization': 'Token 0d586482f0400602ee9b36cc5c11cd9b19843a08',
+                    'Authorization': 'Token 51bc26e38c2e67d4dd8e76742883bce6b6dfffdb',
                 }
             })
 
-            <!--axios.put('http://127.0.0.1:8000/flats/7/', formData, {-->
+            <!--axios.put('http://127.0.0.1:8000/flats/1/', formData, {-->
                 <!--headers: {-->
                     <!--'Content-Type': 'multipart/form-data',-->
-                    <!--'Authorization': 'Token 0d586482f0400602ee9b36cc5c11cd9b19843a08',-->
+                    <!--'Authorization': 'Token 51bc26e38c2e67d4dd8e76742883bce6b6dfffdb',-->
                 <!--}-->
             <!--})-->
         });

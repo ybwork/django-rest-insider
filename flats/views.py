@@ -27,7 +27,6 @@ class FlatViewSet(viewsets.ModelViewSet):
         flat.schema.delete()
         return serializer.save()
 
-    def perform_delete(self, serializer):
-        flat = flat_model.objects.get(pk=self.kwargs['pk'])
-        flat.schema.delete()
-        return serializer
+    def perform_destroy(self, instance):
+        instance.schema.delete()
+        return instance.delete()

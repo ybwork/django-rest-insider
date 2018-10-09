@@ -6,7 +6,7 @@ from houses.models import House
 
 class Flat(models.Model):
     house = models.ForeignKey(House, on_delete=models.CASCADE)
-    schema = models.ImageField()
+    schema = models.ImageField(upload_to='flats')
     price = models.DecimalField(max_digits=10, decimal_places=2, db_index=True)
     number = PositiveIntegerField(db_index=True)
     entrance = PositiveIntegerField(db_index=True)

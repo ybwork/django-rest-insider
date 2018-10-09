@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 BASE_URL = 'http://127.0.0.1:8000'
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Application definition
 
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'houses',
     'flats',
+    'prices',
 ]
 
 SITE_ID = 1
@@ -99,7 +101,7 @@ WSGI_APPLICATION = 'insider.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rest_insider',
+        'NAME': 'insider',
         'USER': 'postgres',
         'PASSWORD': 'asdf',
         'HOST': '127.0.0.1',

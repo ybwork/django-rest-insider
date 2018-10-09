@@ -4,12 +4,12 @@ from houses.filters import IsOwnerHouseFilterBackend
 from houses.models import House
 from houses.serializers import HouseSerializer
 
-model = House
+house = House
 
 
 class HouseViewSet(viewsets.ModelViewSet):
     serializer_class = HouseSerializer
-    queryset = model.objects.all()
+    queryset = house.objects.all()
     filter_backends = [IsOwnerHouseFilterBackend]
 
     def perform_create(self, serializer):

@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <form action="/rest-auth/registration/verify-email/" method="post">
-        <input type="hidden" name="key" value="MTE:1fxBwP:AvRl8wm-8SXUlBV8-4-26QuK9K0">
-        <input type="submit" value="verify-email">
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+    {% block content %}
+        <!-- Для работы подставить в value актуальные знеачения из url -->
+        <form action="/rest-auth/registration/verify-email/" method="post">
+            <input type="hidden" name="key" value="NQ:1gABYd:TDqYioP2jI1aLiVOMV_NiJIQjFo">
+            <input type="submit" value="verify-email">
+        </form>
+    {% endblock %}

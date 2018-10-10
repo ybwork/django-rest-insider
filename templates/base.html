@@ -5,45 +5,38 @@
     <title>Title</title>
 </head>
 <body>
-    <form id="imageForm">
-        <input id="schema" type="file" name="schema">
-        <input type="text" name="price">
-        <input type="text" name="number">
-        <input type="text" name="entrance">
-        <input type="text" name="floor">
-        <input type="text" name="status">
-        <input type="text" name="type">
-        <input type="text" name="house">
-        <button class="post-image" type="button">add image</button>
-    </form>
+    {% block content %}{% endblock %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-</body>
-</html>
-<script>
+    <!-- Потом подключить сюда статику -->
+    <script>
         $('.post-image').on('click', function() {
             var formData = new FormData(document.getElementById('imageForm'))
 
-            var imagefile = document.querySelector('#schema');
+            <!--var imagefile = document.querySelector('#schema');-->
+            var imagefile = document.querySelector('#price');
 
-            formData.append("schema", imagefile.files[0]);
+            <!--formData.append("schema", imagefile.files[0]);-->
+            formData.append("price", imagefile.files[0]);
 
             axios.post('http://127.0.0.1:8000/prices/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                    'Authorization': 'Token 51bc26e38c2e67d4dd8e76742883bce6b6dfffdb',
+                    'Authorization': 'Token c17725b2cf55f9f9f4b636003e2fd1809a9a62a9',
                     <!--'Content-Disposition': 'attachment; filename="1.jpg"',-->
                 }
             })
 
-            <!--axios.put('http://127.0.0.1:8000/flats/1/', formData, {-->
+            <!--axios.put('http://127.0.0.1:8000/flats/4/', formData, {-->
                 <!--headers: {-->
                     <!--'Content-Type': 'multipart/form-data',-->
-                    <!--'Authorization': 'Token 51bc26e38c2e67d4dd8e76742883bce6b6dfffdb',-->
+                    <!--'Authorization': 'Token c17725b2cf55f9f9f4b636003e2fd1809a9a62a9',-->
                 <!--}-->
             <!--})-->
         });
     </script>
+</body>
+</html>

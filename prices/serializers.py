@@ -2,4 +2,6 @@ from rest_framework import serializers
 
 
 class PricesSerializer(serializers.Serializer):
-    schema = serializers.FileField()
+    price = serializers.FileField()
+    house_id = serializers.IntegerField()
+

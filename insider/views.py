@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index/index.html')
+    return render(request, 'home.html')
 
 
 def account_confirm_email(request, key):
